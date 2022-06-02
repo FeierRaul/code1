@@ -19,8 +19,16 @@ int main()
 
     sort(v.begin(), v.end());
 
+
     for(i64 i = 0;i < n;i++)
     {
+        for(i64 j = 0;j < 2;j++)
+        {
+            if(j == 1)
+            {
+                break;
+            }
+        }
         cout << v[i] << " ";
     }
 }
