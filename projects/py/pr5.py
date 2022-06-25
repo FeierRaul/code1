@@ -1,1 +1,5 @@
-print("a")
+import math
+
+n = int(input())
+
+print((n))
