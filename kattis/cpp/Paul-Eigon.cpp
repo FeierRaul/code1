@@ -191,5 +191,19 @@ int main()
     ofstream cout{"output.txt"};
 #endif
 
+    i64 n, a, b;
+    cin >> n >> a >> b;
+
+    a += b;
+
+    if((a / n) % 2 == 0)
+    {
+        cout << "paul" << endl;
+    }
+    else
+    {
+        cout << "opponent" << endl;
+    }
+
     return 0;
 }

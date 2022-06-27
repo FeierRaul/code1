@@ -191,5 +191,18 @@ int main()
     ofstream cout{"output.txt"};
 #endif
 
+    i64 b, br, bs, a, as;
+    cin >> b >> br >> bs >> a >> as;
+
+    i64 bobvaloare = (br - b) * bs;
+    i64 aliceYears = ceil(d6(bobvaloare) / d6(as));
+
+    if (bobvaloare == aliceYears * as)
+    {
+        aliceYears++;
+    }
+
+    cout << aliceYears + a << endl;
+
     return 0;
 }

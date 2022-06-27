@@ -181,6 +181,15 @@ ostream &operator<<(ostream &stream, const deq<T> &v)
 }
 #endif
 
+void solve(i64 v[1000])
+{
+    for (i64 i = 0;i < 5;i++) 
+    {
+        cout << v[i] << " ";
+    }
+    cout << endl;
+}
+
 int main()
 {
     ios_base::sync_with_stdio(false);
@@ -190,6 +199,32 @@ int main()
     ifstream cin{"input.txt"};
     ofstream cout{"output.txt"};
 #endif
+
+    i64 v[1000];
+    cin >> v[0] >> v[1] >> v[2] >> v[3] >> v[4];
+    for(i64 i = 0;i < 4;i++)
+    {
+        if(v[0] > v[1])
+        {
+            swap(v[0], v[1]);
+            solve(v);
+        }
+        if(v[1] > v[2])
+        {
+            swap(v[1], v[2]);
+            solve(v);
+        }
+        if(v[2] > v[3])
+        {
+            swap(v[2], v[3]);
+            solve(v);
+        }
+        if(v[3] > v[4])
+        {
+            swap(v[3], v[4]);
+            solve(v);
+        }
+    }
 
     return 0;
 }

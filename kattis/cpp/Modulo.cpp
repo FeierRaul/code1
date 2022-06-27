@@ -191,5 +191,31 @@ int main()
     ofstream cout{"output.txt"};
 #endif
 
+    bool v[42];
+
+    for (i64 i = 0;i < 42;i++)
+    {
+        v[i] = false;
+    }
+
+    for (i64 i = 0;i < 10;i++)
+    {
+        i64 n;
+        cin >> n;
+        v[n % 42] = true;
+    }
+
+    i64 t = 0;
+
+    for (i64 i = 0;i < 42;i++)
+    {
+        if (v[i])
+        {
+            t++;
+        }
+    }
+
+    cout << t << endl;
+
     return 0;
 }

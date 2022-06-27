@@ -191,5 +191,21 @@ int main()
     ofstream cout{"output.txt"};
 #endif
 
+    i64 n, zes, fer, zes = fer, a = 0;
+    cin >> n;
+
+    for (i64 i = 0;i < n;i++)
+    {
+        i64 t;
+        cin >> t;
+        if (t < zes)
+        {
+            zes = t;
+            a = i;
+        }
+    }
+
+    cout << a << endl;
+
     return 0;
 }

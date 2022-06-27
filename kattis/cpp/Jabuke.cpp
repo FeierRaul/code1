@@ -191,5 +191,40 @@ int main()
     ofstream cout{"output.txt"};
 #endif
 
+    i64 Xa, Ya, Xb, Yb, Xc, Yc;
+
+    cin >> Xa >> Ya;
+    cin >> Xb >> Yb;
+    cin >> Xc >> Yc;
+
+    i64 n;
+    cin >> n;
+
+    i64 count = 0;
+
+    
+
+    for (i64 i = 0;i < n;i++)
+    {
+        i64 a, b;
+        cin >> a >> b;
+        
+        d64 a1 = abs(a * (Yb - Yc) + Xb * (Yc - b) + Xc * (b - Yb)) / 2.0;
+        d64 a2 = abs(Xa * (b - Yc) + a * (Yc - Ya) + Xc * (Ya - b)) / 2.0;
+        d64 a3 = abs(Xa * (Yb - b) + Xb * (b - Ya) + a * (Ya - Yb)) / 2.0;
+
+        if ((a1 + a2 + a3) == a)
+        {
+            count++;
+        }
+
+    }
+
+    cout.precision(1);
+    cout << fixed <<  abs(d64(Xa * (Yb - Yc) + Xb * (Yc - Ya) + Xc * (Ya - Yb)) / 2) << endl;
+
+    cout << count << endl;
+
+
     return 0;
 }

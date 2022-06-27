@@ -191,5 +191,30 @@ int main()
     ofstream cout{"output.txt"};
 #endif
 
+    i64 n, j = 1;
+
+    while (cin >> n)
+    {
+        i64 mn, mx;
+        cin >> mx;
+        mn = mx;
+
+        for (i64 i = 0;i < n - 1;i++)
+        {
+            i64 k;
+            cin >> k;
+
+            if (k < mn)
+            {
+                mn = k;
+            }
+            if (k > mx)
+            {
+                mx = k;
+            }
+        }
+        cout << "Case #" << j << ": " << mn << " " << mx << " " << mx - mn << endl;
+        j++;
+    }
     return 0;
 }

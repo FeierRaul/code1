@@ -191,5 +191,26 @@ int main()
     ofstream cout{"output.txt"};
 #endif
 
+    i64 n, s, t;
+    
+    while (cin >> n)
+    {
+        if (n == -1)
+        {
+            return 0;
+        }
+        i64 a = 0, b = 0;
+
+        for (i64 i = 0; i < n; i++)
+        {
+            cin >> s >> t;
+            a += s * (t - b);
+            b = t;
+        }
+
+        cout << a << " miles" << endl;
+    }
+
+
     return 0;
 }

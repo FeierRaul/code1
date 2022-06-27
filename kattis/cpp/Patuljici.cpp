@@ -191,5 +191,40 @@ int main()
     ofstream cout{"output.txt"};
 #endif
 
+    i64 j, k, i;
+    i64 v[9];
+    bool b[9];
+    i64 sum = 0;
+
+    for (i = 0; i < 9; i++)
+    {
+        cin >> v[i];
+        sum += v[i];
+        b[i] = true;
+    }
+
+    for (i = 0; i < 9; i++)
+    {
+        for (j = 0; j < 9; j++)
+        {
+            if (j != i)
+            {
+                if (sum - v[i] - v[j] == 100)
+                {
+                    b[i] = false;
+                    b[j] = false;
+                }
+            }
+        }
+    }
+    
+    for (i = 0; i < 9; i++)
+    {
+        if (b[i])
+        {
+            cout << v[i] << "\n";
+        }
+    }
+
     return 0;
 }

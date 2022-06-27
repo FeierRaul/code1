@@ -191,5 +191,33 @@ int main()
     ofstream cout{"output.txt"};
 #endif
 
+    i64 n, k;
+    cin >> n >> k;
+
+    i64 d, s;
+    cin >> d >> s;
+
+    i64 total = n * d;
+    i64 a = n - k;
+    i64 b = k * s;
+
+    if (total - b > 100 * a)
+    {
+        cout << "impossible" << endl;
+    }
+    else
+    {
+        cout.precision(10);
+        d64 val = (total - b) / d64(a);
+        
+        if (val >= 0 && val <= 100)
+        {
+            cout << fixed << val << endl;
+        }
+        else
+        {
+            cout << "impossible" << endl;
+        }
+    }
     return 0;
 }

@@ -191,5 +191,14 @@ int main()
     ofstream cout{"output.txt"};
 #endif
 
+    i64 a, b, c;
+    cin >> a >> b >> c;
+
+    i64 total = max(b-a, c-b);
+    total--;
+
+    cout << total << endl;
+
+
     return 0;
 }
