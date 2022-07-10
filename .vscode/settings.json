@@ -1,4 +1,7 @@
 {
+    "editor.fontFamily": "Fira Code",
+    "editor.fontLigatures": true,
+    
     "files.associations": {
         "array": "cpp",
         "deque": "cpp",
@@ -15,5 +18,6 @@
         "regex": "cpp",
         "valarray": "cpp",
         "iosfwd": "cpp"
+
     }
 }
