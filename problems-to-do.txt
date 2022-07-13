@@ -2,7 +2,6 @@ GlitchBot
 Combination-Lock
 Batter-up
 Volim
-Popular-Vote
 Gerrymandering
 Flexible Spaces
 Cooking Water
@@ -10,7 +9,6 @@ Video Speedup
 Social running
 Touchdown!
 Golomb Rulers
-Final Exam
 Toilet Seat
 Parking
 Ninety-nine
