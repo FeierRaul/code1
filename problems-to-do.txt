@@ -1,4 +1,3 @@
-GlitchBot
 Combination-Lock
 Batter-up
 Volim
