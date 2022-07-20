@@ -19,5 +19,7 @@
         "valarray": "cpp",
         "iosfwd": "cpp"
 
-    }
+    },
+    "editor.cursorSmoothCaretAnimation": true,
+    "editor.smoothScrolling": true
 }
