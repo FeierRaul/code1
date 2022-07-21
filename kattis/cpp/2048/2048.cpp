@@ -243,6 +243,59 @@ void left(i64 v[4][4])
     }
 }
 
+void zerosr(i64 v[4][4], i64 k)
+{
+    vi64 m(4);
+
+    i64 z = 0;
+    for (i64 i = 3; i >= 0; i--)
+    {
+        if (v[k][i] != 0)
+        {
+            m[z] = v[k][i];
+            z++;
+        }
+    }
+
+    for (i64 i = m.size(); i < 4; i++)
+    {
+        m[i] = 0;
+    }
+
+    z = 0;
+    for (i64 i = 3; i >= 0; i--)
+    {
+        v[k][i] = m[z];
+        z++;
+    }
+}
+
+void solver(i64 v[4][4], i64 k)
+{
+    for (i64 i = 3; i >= 0; i--)
+    {
+        if (v[k][i] == v[k][i - 1] && i != 0) // solving the right case
+        {
+            v[k][i] = 2 * v[k][i];
+            v[k][i - 1] = 0;
+        }
+    }
+}
+
+void right(i64 v[4][4])
+{
+    for (i64 k = 0; k < 4; k++)
+    {
+        checkl(v, k, false);
+        if (checkl)
+        {
+            zerosr(v, k);
+        }
+        solver(v, k);
+        zerosr(v, k);
+    }
+}
+
 void checkup(i64 v[4][4], i64 i, bool checkup)
 {
     for (i64 k = 0; k < 4; k++)
@@ -254,8 +307,41 @@ void checkup(i64 v[4][4], i64 i, bool checkup)
     }
 }
 
-void zerosup(i64 v[4][4], i64 k)
+void zerosup(i64 v[4][4], i64 i)
 {
+    vi64 m(4);
+
+    i64 z = 0;
+    for (i64 k = 0; k < 4; k++)
+    {
+        if (v[k][i] != 0)
+        {
+            m[z] = v[k][i];
+            z++;
+        }
+    }
+
+    for (i64 k = m.size(); k < 4; k++)
+    {
+        m[k] = 0;
+    }
+
+    for (i64 k = 0; k < 4; k++)
+    {
+        v[k][i] = m[k];
+    }
+}
+
+void solveup(i64 v[4][4], i64 i)
+{
+    for (i64 k = 0; k < 4; k++)
+    {
+        if (v[k][i] == v[k + 1][i] && k != 3) // solving the up case
+        {
+            v[k][i] = 2 * v[k][i];
+            v[k + 1][i] = 0;
+        }
+    }
 }
 
 void up(i64 v[4][4])
@@ -265,7 +351,63 @@ void up(i64 v[4][4])
         checkup(v, i, false);
         if (checkup)
         {
+            zerosup(v, i);
         }
+        solveup(v, i);
+        zerosup(v, i);
+    }
+}
+
+void zerosdown(i64 v[4][4], i64 i)
+{
+    vi64 m(4);
+
+    i64 z = 0;
+    for (i64 k = 3; k >= 0; k--)
+    {
+        if (v[k][i] != 0)
+        {
+            m[z] = v[k][i];
+            z++;
+        }
+    }
+
+    for (i64 k = m.size(); k < 4; k++)
+    {
+        m[k] = 0;
+    }
+
+    z = 0;
+    for (i64 k = 3; k >= 0; k--)
+    {
+        v[k][i] = m[z];
+        z++;
+    }
+}
+
+void solvedown(i64 v[4][4], i64 i)
+{
+    for (i64 k = 3; k >= 0; k--)
+    {
+        if (v[k][i] == v[k - 1][i] && k != 0) // solving the down case
+        {
+            v[k][i] = 2 * v[k][i];
+            v[k - 1][i] = 0;
+        }
+    }
+}
+
+void down(i64 v[4][4])
+{
+    for (i64 i = 0; i < 4; i++)
+    {
+        checkup(v, i, false);
+        if (checkup)
+        {
+            zerosdown(v, i);
+        }
+        solvedown(v, i);
+        zerosdown(v, i);
     }
 }
 
@@ -301,6 +443,14 @@ int main()
     else if (poz == pozs[1])
     {
         up(v);
+    }
+    else if (poz == pozs[2])
+    {
+        right(v);
+    }
+    else
+    {
+        down(v);
     }
 
     for (i64 i = 0; i < 4; i++)
