@@ -25,8 +25,6 @@ Pseudoprime numbers
 Disastrous Downtime
 Astro
 Bumper-To-Bumper Traffic
-temperature
-eligibility
 helpaphd
 stararragements
 artichoke
@@ -47,7 +45,6 @@ Pipe Rotation
 Hot Springs
 Sum of the Others
 Milestone Counter
-Rock Band
 Prozor
 Mali
 Distance
@@ -58,7 +55,6 @@ Short Sell
 Unique Snowflakes
 Closest Sums
 Saving Princess Peach
-2048
 Fun House
 Bela
 Bard
@@ -75,7 +71,6 @@ Credit Card Payment
 Not Amused
 Game of Throwns
 Primary Arithmetic
-Rings
 Reverse Rot
 T9 Spelling
 Paintings

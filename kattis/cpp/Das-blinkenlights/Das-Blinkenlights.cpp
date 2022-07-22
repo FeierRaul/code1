@@ -1,24 +1,22 @@
 #include <iostream>
 #include <cmath>
 
-using namespace::std;
+using namespace ::std;
 
 int main()
 {
-    int p,q,s,zes,a,b;
+    int p, q, s, zes, a, b;
     cin >> p >> q >> s;
-    a=p;
-    b=q;
-    
-    while(q != 0)
+    a = p;
+    b = q;
+
+    while (q != 0)
     {
         zes = p % q;
         p = q;
         q = zes;
-
-
     }
-    if( ( a / p) * b <= s )
+    if ((a / p) * b <= s)
     {
         cout << "yes" << endl;
     }
